@@ -1,0 +1,5 @@
+name: Rancher Hello World
+description: |
+    Hello world from Rancher
+version: v0.1
+category: Dummy

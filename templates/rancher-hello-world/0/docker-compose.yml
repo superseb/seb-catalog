@@ -1,0 +1,4 @@
+helloworld:
+    image: superseb/rancher-hello-world:v0.1
+    labels:
+        io.rancher.container.pull_image: always
