@@ -3,6 +3,8 @@ version: "2"
 services:
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:5.4.0
+    environment:
+      xpack.security.enabled: false
 
   grafana:
     image: grafana/grafana
