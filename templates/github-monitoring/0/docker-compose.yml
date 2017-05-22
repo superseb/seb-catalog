@@ -2,7 +2,7 @@ version: "2"
 
 services:
   prometheus:
-    image: prom/prometheus
+    image: superseb/prometheus-github:v1.6.3
     container_name: prometheus
     links:
       - metrics:metrics
