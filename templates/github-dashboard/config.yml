@@ -1,0 +1,5 @@
+name: GitHub dashboard
+description: |
+    GitHub Dashboard based on github-to-es, ElasticSearch and Grafana
+version: v0.1
+category: Analytics

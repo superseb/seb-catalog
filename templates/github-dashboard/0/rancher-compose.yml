@@ -1,0 +1,35 @@
+version: '2'
+catalog:
+  name: "GitHub Dashboard"
+  version: "v0.1"
+  description: "GitHub dashboard"
+  questions:
+    - variable: GF_SECURITY_ADMIN_PASSWORD
+      label: Grafana admin password
+      type: password
+      description: Set Grafana admin password
+      required: true
+    - variable: GF_USERS_ALLOW_SIGN_UP
+      label: Grafana allow sign up
+      type: boolean
+      description: Allow user sign up in Grafana
+      default: false
+    - variable: GITHUB_TOKEN
+      label: GitHub token
+      type: password
+      description: Specify GitHub token to retrieve data
+      required: true
+services:
+  grafana-lb:
+    scale: 1
+    lb_config:
+      port_rules:
+      - source_port: 3000
+        target_port: 3000
+        service: grafana
+    health_check:
+      port: 42
+      interval: 2000
+      unhealthy_threshold: 3
+      healthy_threshold: 2
+      response_timeout: 2000
