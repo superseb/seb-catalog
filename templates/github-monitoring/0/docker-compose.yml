@@ -22,3 +22,8 @@ services:
     environment:
       REPOS: "${REPOS}"
       GITHUB_TOKEN: "${GITHUB_TOKEN}"
+
+  grafana-lb:
+    image: rancher/lb-service-haproxy:v0.6.4
+    ports:
+    - 3000
