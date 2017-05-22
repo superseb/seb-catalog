@@ -1,0 +1,26 @@
+version: '2'
+catalog:
+  name: "GitHub monitoring"
+  version: "v0.1"
+  description: "GitHub monitoring stack"
+  questions:
+    - variable: GF_SECURITY_ADMIN_PASSWORD
+      label: Grafana admin password
+      type: password
+      description: Set Grafana admin password
+      required: true
+    - variable: GF_USERS_ALLOW_SIGN_UP
+      label: Grafana allow sign up
+      type: boolean
+      description: Allow user sign up in Grafana
+      default: false
+    - variable: REPOS
+      label: Repositories to monitor
+      type: string
+      description: Specify Github repositories to monitor (docker/docker)
+      required: true
+    - variable: GITHUB_TOKEN
+      label: GitHub token
+      type: password
+      description: Specify GitHub token to retrieve data
+      required: true
