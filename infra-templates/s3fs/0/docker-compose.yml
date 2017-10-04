@@ -1,0 +1,28 @@
+version: '2'
+services:
+  s3fs-driver:
+    privileged: true
+    image: dahendel/storage-s3fs
+    network_mode: host
+    pid: host
+    labels:
+      io.rancher.scheduler.global: 'true'
+      io.rancher.container.create_agent: 'true'
+      io.rancher.container.agent.role: environment
+      io.rancher.container.dns: 'true'
+    environment:
+      S3FS_ENDPOINT: http://ENDPOINT
+      S3FS_ACCESSKEY: KEY
+      S3FS_SECRETKEY: SKEY
+      S3FS_OPTIONS: 'url=ENDPOINT,allow_other,nonempty'
+      LIBSTORAGE_VOLUME_OPERATIONS_MOUNT_ROOT_PATH: /
+    volumes:
+    - /run:/run
+    - /var/run:/var/run
+    - /dev:/host/dev
+    - /var/lib/rancher/volumes:/var/lib/rancher/volumes:shared
+    logging:
+      driver: json-file
+      options:
+        max-size: 25m
+        max-file: '2'

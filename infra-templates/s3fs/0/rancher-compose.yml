@@ -1,0 +1,10 @@
+.catalog:
+  name: "Rancher S3FS"
+  version: 0.1.0
+  description: |
+    Docker volume plugin for S3FS
+s3fs-driver:
+  storage_driver:
+    name: rexray-s3fs
+    scope: environment
+    volume_access_mode: multiHostRW

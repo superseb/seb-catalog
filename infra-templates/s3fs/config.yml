@@ -1,0 +1,8 @@
+name: Rancher S3FS
+description: |
+  Docker volume plugin for S3FS.
+version: 0.1.0
+category: Storage
+labels:
+  io.rancher.certified: rancher
+  io.rancher.orchestration.supported: 'cattle'
