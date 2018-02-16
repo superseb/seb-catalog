@@ -1,0 +1,12 @@
+version: '2'
+catalog:
+  name: "Conditional"
+  version: "v0.1"
+  description: "Conditional"
+  questions:
+    - variable: DEPLOY_APACHE
+      description: Deploy Apache
+      label: Deploy Apache
+      required: true
+      type: boolean
+      default: false
